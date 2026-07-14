@@ -41,7 +41,10 @@ def upgrade() -> None:
     )
     op.create_index("ix_users_username", "users", ["username"], unique=True)
     op.create_index("ix_users_email", "users", ["email"], unique=True)
+<<<<<<< HEAD
     op.create_index("ix_users_id", "users", ["id"])
+=======
+>>>>>>> 7d60080 (Update project)
 
     op.create_table(
         "habits",
@@ -65,7 +68,10 @@ def upgrade() -> None:
             name="ck_habits_category",
         ),
     )
+<<<<<<< HEAD
     op.create_index("ix_habits_id", "habits", ["id"])
+=======
+>>>>>>> 7d60080 (Update project)
 
     op.create_table(
         "habit_logs",
@@ -75,7 +81,10 @@ def upgrade() -> None:
         sa.Column("completed", sa.Boolean(), nullable=True, server_default=sa.true()),
         sa.UniqueConstraint("habit_id", "date", name="uq_habit_date"),
     )
+<<<<<<< HEAD
     op.create_index("ix_habit_logs_id", "habit_logs", ["id"])
+=======
+>>>>>>> 7d60080 (Update project)
     op.create_index("ix_habit_logs_date", "habit_logs", ["date"])
 
     op.create_table(
@@ -86,7 +95,10 @@ def upgrade() -> None:
         sa.Column("unlocked_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP")),
         sa.UniqueConstraint("user_id", "achievement_id", name="uq_user_achievement"),
     )
+<<<<<<< HEAD
     op.create_index("ix_user_achievements_id", "user_achievements", ["id"])
+=======
+>>>>>>> 7d60080 (Update project)
     op.create_index("ix_user_achievements_user_id", "user_achievements", ["user_id"])
     op.create_index("ix_user_achievements_achievement_id", "user_achievements", ["achievement_id"])
 
