@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Habit Tracker — Phase 5 (Deployment)
 =======
 #    — Phase 5 (Deployment)
 >>>>>>> bc7569b5074305412d6663c8f6ac85019460eb00
+=======
+# Habit Tracker — Phase 5 (Deployment)
+>>>>>>> 7d60080 (Update project)
 
 A production-ready full-stack habit tracker. **Phase 5** takes Phase 4's
 finished app to production: Alembic migrations replace ad-hoc table
