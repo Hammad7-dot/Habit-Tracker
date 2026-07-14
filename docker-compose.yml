@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: habit-tracker-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=development
+      - DATABASE_URL=sqlite:///./habit_tracker.db
+      - SECRET_KEY=${SECRET_KEY:-dev_secret_change_me}
+      - CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:5500
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+
+  # Uncomment to run PostgreSQL locally instead of SQLite
+  # db:
+  #   image: postgres:16-alpine
+  #   container_name: habit-tracker-db
+  #   environment:
+  #     - POSTGRES_USER=habit_user
+  #     - POSTGRES_PASSWORD=habit_pass
+  #     - POSTGRES_DB=habit_tracker
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+
+# volumes:
+#   pgdata:

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habits — Habit Tracker</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="app-shell">
+  <div id="app-shell-root"></div>
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>Habits</h1>
+        <div class="sub">Everything you're building, in one place.</div>
+      </div>
+      <button class="btn btn-primary" id="new-habit-btn"><i class="fa-solid fa-plus"></i> Add habit</button>
+    </div>
+
+    <div class="habits-grid" id="habits-grid">
+      <div class="skel" style="height:180px;"></div>
+      <div class="skel" style="height:180px;"></div>
+      <div class="skel" style="height:180px;"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Create / Edit modal -->
+<div class="modal-overlay" id="habit-modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">New habit</h2>
+      <button class="btn btn-icon btn-ghost" id="modal-close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="form-error" id="modal-error"></div>
+    <form id="habit-form" novalidate>
+      <input type="hidden" id="habit-id">
+      <div class="field">
+        <label for="habit-title">Title</label>
+        <input type="text" id="habit-title" maxlength="100" required placeholder="e.g. Drink 8 glasses of water">
+      </div>
+      <div class="field">
+        <label for="habit-description">Description <span class="field-hint">(optional)</span></label>
+        <textarea id="habit-description" rows="2" maxlength="500" placeholder="Any details or reminders"></textarea>
+      </div>
+      <div class="field">
+        <label for="habit-category">Category</label>
+        <select id="habit-category"></select>
+      </div>
+      <div class="field">
+        <label for="habit-goal">Goal <span class="field-hint">(times per day)</span></label>
+        <input type="number" id="habit-goal" min="1" value="1" required>
+      </div>
+      <div class="field">
+        <label>Color</label>
+        <div class="swatch-grid" id="color-picker"></div>
+      </div>
+      <div class="field">
+        <label>Icon</label>
+        <div class="icon-grid" id="icon-picker"></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="habit-submit-btn" style="margin-top:0.5rem;">
+        <span id="habit-submit-label">Save habit</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Delete confirm modal -->
+<div class="modal-overlay" id="delete-modal-overlay">
+  <div class="modal" style="max-width:380px;">
+    <div class="modal-header"><h2>Delete habit?</h2></div>
+    <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:1.5rem;" id="delete-modal-text">This will permanently delete this habit and all of its completion history. This can't be undone.</p>
+    <div style="display:flex; gap:0.75rem;">
+      <button class="btn btn-secondary btn-block" id="delete-cancel-btn">Cancel</button>
+      <button class="btn btn-danger btn-block" id="delete-confirm-btn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script src="js/habits.js"></script>
+</body>
+</html>

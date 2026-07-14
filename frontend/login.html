@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Habit Tracker</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="brand"><i class="fa-solid fa-bolt"></i> Habit Tracker</div>
+    <p class="subtitle">Welcome back. Log in to keep your streaks alive.</p>
+
+    <div class="form-error" id="form-error"></div>
+
+    <form id="login-form" novalidate>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <div class="checkbox-row" style="margin-bottom:1.4rem;">
+        <input type="checkbox" id="remember_me" name="remember_me">
+        <label for="remember_me">Keep me logged in</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+        <span id="submit-label">Log in</span>
+      </button>
+    </form>
+
+    <div class="auth-footer">Don't have an account? <a href="register.html">Create one</a></div>
+  </div>
+</div>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script>
+redirectIfAuthed();
+
+const form = document.getElementById("login-form");
+const errorEl = document.getElementById("form-error");
+const submitBtn = document.getElementById("submit-btn");
+const submitLabel = document.getElementById("submit-label");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  setFormError(errorEl, "");
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const remember_me = document.getElementById("remember_me").checked;
+
+  submitBtn.disabled = true;
+  submitLabel.textContent = "Logging in…";
+
+  try {
+    const result = await api.post("/auth/login", { email, password, remember_me });
+    setToken(result.access_token);
+    setCachedUser(result.user);
+    location.href = "dashboard.html";
+  } catch (err) {
+    setFormError(errorEl, err.message || "Login failed.");
+    submitBtn.disabled = false;
+    submitLabel.textContent = "Log in";
+  }
+});
+</script>
+</body>
+</html>
