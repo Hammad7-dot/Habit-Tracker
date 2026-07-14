@@ -16,4 +16,8 @@ COPY . .
 
 EXPOSE 8000
 
+<<<<<<< HEAD
 CMD ["sh", "-c", "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+=======
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+>>>>>>> bc7569b5074305412d6663c8f6ac85019460eb00
