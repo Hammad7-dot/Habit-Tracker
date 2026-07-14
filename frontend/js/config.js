@@ -8,5 +8,5 @@
 // ============================================================================
 
 window.HABIT_TRACKER_CONFIG = {
-  PROD_API_BASE_URL: "https://habit-tracker-backend-production-9432.up.railway.app",
+ PROD_API_BASE_URL: "https://habit-tracker-backend-production-9432.up.railway.app",
 };
