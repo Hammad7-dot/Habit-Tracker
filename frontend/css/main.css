@@ -661,27 +661,29 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
 .month-cal-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
-  font-size: 0.72rem;
+  gap: 4px;
+  font-size: 0.62rem;
   color: var(--text-faint);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  max-width: 320px;
 }
 
 .month-cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+  gap: 4px;
+  max-width: 320px;
 }
 
 .month-cal-cell {
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius-sm, 6px);
+  border-radius: 4px;
   background: var(--surface-strong);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.78rem;
+  font-size: 0.65rem;
   color: var(--text-dim);
   position: relative;
   cursor: pointer;
@@ -717,7 +719,7 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
 }
 
 @media (max-width: 640px) {
-  .month-cal-cell { font-size: 0.68rem; }
+  .month-cal-cell { font-size: 0.58rem; }
 }
 
 
@@ -879,5 +881,3 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   .stat-card .stat-value { font-size: 1.5rem; }
   .habits-grid { grid-template-columns: 1fr; }
 }
-
-
