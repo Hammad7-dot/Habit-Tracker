@@ -20,6 +20,7 @@
   const submitBtn = document.getElementById("habit-submit-btn");
   const submitLabel = document.getElementById("habit-submit-label");
   const deleteOverlay = document.getElementById("delete-modal-overlay");
+<<<<<<< HEAD
   const reminderEnabledInput = document.getElementById("habit-reminder-enabled");
   const reminderTimeInput = document.getElementById("habit-reminder-time");
 
@@ -29,6 +30,8 @@
       Notification.requestPermission();
     }
   });
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
 
   await bootstrap();
 
@@ -107,7 +110,10 @@
         ${h.description ? `<div class="desc">${escapeHtml(h.description)}</div>` : ""}
         <div class="habit-card-stats">
           <div><strong>${h.goal}</strong>&nbsp;/ day goal</div>
+<<<<<<< HEAD
           ${h.reminder_enabled && h.reminder_time ? `<div class="reminder-pill"><i class="fa-solid fa-bell"></i> ${formatReminderTime(h.reminder_time)}</div>` : ""}
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
         </div>
         <div class="habit-card-actions">
           <button class="btn btn-secondary btn-sm edit-btn" style="flex:1;"><i class="fa-solid fa-pen"></i> Edit</button>
@@ -132,9 +138,12 @@
     document.getElementById("habit-description").value = "";
     document.getElementById("habit-category").value = options.categories[0];
     document.getElementById("habit-goal").value = 1;
+<<<<<<< HEAD
     reminderEnabledInput.checked = false;
     reminderTimeInput.value = "09:00";
     reminderTimeInput.style.display = "none";
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
     selectColor(options.colors[Math.floor(Math.random() * options.colors.length)] || options.colors[0]);
     selectIcon(options.icons[0]);
     submitLabel.textContent = "Save habit";
@@ -152,15 +161,19 @@
     document.getElementById("habit-description").value = h.description || "";
     document.getElementById("habit-category").value = h.category;
     document.getElementById("habit-goal").value = h.goal;
+<<<<<<< HEAD
     reminderEnabledInput.checked = !!h.reminder_enabled;
     reminderTimeInput.value = h.reminder_time ? h.reminder_time.slice(0, 5) : "09:00";
     reminderTimeInput.style.display = reminderEnabledInput.checked ? "block" : "none";
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
     selectColor(h.color);
     selectIcon(h.icon);
     submitLabel.textContent = "Save changes";
     modalOverlay.classList.add("open");
   }
 
+<<<<<<< HEAD
   function formatReminderTime(hms) {
     const [h, m] = hms.split(":").map(Number);
     const d = new Date();
@@ -168,6 +181,8 @@
     return d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
   }
 
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
   function closeModal() {
     modalOverlay.classList.remove("open");
   }
@@ -192,8 +207,11 @@
       goal: Number(document.getElementById("habit-goal").value) || 1,
       color: selectedColor,
       icon: selectedIcon,
+<<<<<<< HEAD
       reminder_enabled: reminderEnabledInput.checked,
       reminder_time: reminderEnabledInput.checked ? reminderTimeInput.value : null,
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
     };
 
     submitBtn.disabled = true;

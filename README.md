@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Habit Tracker — Phase 5 (Deployment)
 =======
 #    — Phase 5 (Deployment)
@@ -8,11 +9,15 @@
 # Habit Tracker — Phase 5 (Deployment)
 >>>>>>> 7d60080 (Update project)
 
+=======
+# Habit Tracker 
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
 A production-ready full-stack habit tracker. **Phase 5** takes Phase 4's
 finished app to production: Alembic migrations replace ad-hoc table
 creation, the backend deploys to Render on managed PostgreSQL, and the
 frontend deploys to Vercel as a static site.
 
+<<<<<<< HEAD
 ## What's new in Phase 5
 
 - **Alembic** (`backend/alembic/`): a real migration history instead of
@@ -38,6 +43,8 @@ frontend deploys to Vercel as a static site.
   long-cache immutable headers for `css/`/`js/`).
 - **`.gitignore`**: excludes `.env`, the local SQLite file, and `__pycache__`.
 
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
 ## What's included overall
 
 - FastAPI backend with clean architecture: `routers/`, `models/`, `schemas/`, `services/`, `database/`, `utils/`
@@ -70,6 +77,7 @@ cd frontend
 python -m http.server 5500
 ```
 
+<<<<<<< HEAD
 Open http://localhost:5500. The frontend auto-detects `localhost`/`127.0.0.1`
 and points at `http://localhost:8000` — `frontend/js/config.js` is ignored
 locally, so there's nothing to edit for local dev.
@@ -101,6 +109,8 @@ uses, so it works against SQLite locally and Postgres in production with
 no extra config — just make sure your `.env` (or shell environment) is set
 before running these commands.
 
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
 ## Deploying
 
 **Order matters**: deploy the backend first so you have its URL, then the
@@ -139,6 +149,7 @@ your Vercel domain from step 2 (comma-separated if you have multiple, e.g.
 a preview and a production domain), then redeploy the backend so the CORS
 change takes effect.
 
+<<<<<<< HEAD
 ## API Endpoints
 
 | Method | Path | Description |
@@ -160,6 +171,9 @@ change takes effect.
 | POST | /profile/change-password | Change password |
 | GET | /profile/stats | Total habits/completions |
 | GET | /achievements | Full catalog + this user's progress/unlock status |
+=======
+
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
 | POST | /achievements/evaluate | Re-check and unlock any newly-earned achievements |
 
 ## Possible next steps
