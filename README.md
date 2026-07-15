@@ -1,42 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Habit Tracker — Phase 5 (Deployment)
-=======
-#    — Phase 5 (Deployment)
->>>>>>> bc7569b5074305412d6663c8f6ac85019460eb00
-=======
-# Habit Tracker — Phase 5 (Deployment)
->>>>>>> 7d60080 (Update project)
-
 A production-ready full-stack habit tracker. **Phase 5** takes Phase 4's
 finished app to production: Alembic migrations replace ad-hoc table
 creation, the backend deploys to Render on managed PostgreSQL, and the
 frontend deploys to Vercel as a static site.
-
-## What's new in Phase 5
-
-- **Alembic** (`backend/alembic/`): a real migration history instead of
-  `Base.metadata.create_all()`. `0001_initial` mirrors the four existing
-  models exactly (`User`, `Habit`, `HabitLog`, `UserAchievement`). Table
-  auto-creation in `app/factory.py` now only runs when `ENV != production`
-  — in production, schema is owned entirely by migrations, so a failed
-  migration can't be silently masked by auto-create.
-- **`backend/config.py`**: normalizes Render's legacy `postgres://` URL
-  scheme to `postgresql://` (required by SQLAlchemy 2.x) automatically, and
-  refuses to start with `ENV=production` if `SECRET_KEY` is still the
-  placeholder default.
-- **`render.yaml`**: a Render Blueprint that provisions the backend web
-  service and a managed Postgres database together, wires `DATABASE_URL`
-  and a generated `SECRET_KEY` automatically, and runs
-  `alembic upgrade head` as a pre-deploy step on every deploy.
-- **`backend/Dockerfile`**: now binds to Render's injected `$PORT` (falls
-  back to `8000` for local `docker-compose`).
-- **`frontend/js/config.js`**: the one file you edit per environment — sets
-  the production API URL. `app.js` reads it instead of hardcoding a
-  placeholder, so the shared app code never needs touching for a deploy.
-- **`frontend/vercel.json`**: static-hosting config (security headers,
-  long-cache immutable headers for `css/`/`js/`).
-- **`.gitignore`**: excludes `.env`, the local SQLite file, and `__pycache__`.
 
 ## What's included overall
 
@@ -69,37 +35,6 @@ Then serve the frontend (any static server works, e.g.):
 cd frontend
 python -m http.server 5500
 ```
-
-Open http://localhost:5500. The frontend auto-detects `localhost`/`127.0.0.1`
-and points at `http://localhost:8000` — `frontend/js/config.js` is ignored
-locally, so there's nothing to edit for local dev.
-
-## Running with Docker
-
-```bash
-docker-compose up --build
-```
-
-## Database migrations (Alembic)
-
-The schema lives in `backend/alembic/versions/`, not in code that runs on
-every startup. Common commands (run from `backend/`):
-
-```bash
-# Apply all pending migrations (also runs automatically on Render deploys)
-alembic upgrade head
-
-# After changing a model, generate a new migration
-alembic revision --autogenerate -m "describe the change"
-
-# Roll back the last migration
-alembic downgrade -1
-```
-
-`alembic/env.py` reads `DATABASE_URL` from the same `Settings` the app
-uses, so it works against SQLite locally and Postgres in production with
-no extra config — just make sure your `.env` (or shell environment) is set
-before running these commands.
 
 ## Deploying
 
@@ -139,27 +74,7 @@ your Vercel domain from step 2 (comma-separated if you have multiple, e.g.
 a preview and a production domain), then redeploy the backend so the CORS
 change takes effect.
 
-## API Endpoints
 
-| Method | Path | Description |
-|---|---|---|
-| POST | /auth/register | Create account, returns JWT |
-| POST | /auth/login | Login, returns JWT |
-| GET | /auth/me | Current user |
-| GET | /habits/options | Valid categories/icons/colors for the picker UI |
-| GET | /habits | List habits |
-| POST | /habits | Create habit |
-| PUT | /habits/{id} | Update habit |
-| DELETE | /habits/{id} | Delete habit |
-| POST | /complete/{habit_id} | Toggle completion for today (or `?log_date=YYYY-MM-DD`) |
-| GET | /dashboard | Today's habits + streaks + completion % |
-| GET | /analytics | Daily/category/per-habit stats (`?days=N`) |
-| GET | /analytics/heatmap | Calendar heatmap data for a given year (`?year=YYYY`) |
-| GET | /profile | Profile |
-| PUT | /profile | Update profile |
-| POST | /profile/change-password | Change password |
-| GET | /profile/stats | Total habits/completions |
-| GET | /achievements | Full catalog + this user's progress/unlock status |
 | POST | /achievements/evaluate | Re-check and unlock any newly-earned achievements |
 
 ## Possible next steps
