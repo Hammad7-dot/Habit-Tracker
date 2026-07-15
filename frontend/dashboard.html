@@ -34,6 +34,30 @@
         <div class="skel" style="height:60px;"></div>
       </div>
     </div>
+
+    <div class="card" style="margin-top:1.25rem;">
+      <div class="page-header" style="margin-bottom:1rem;">
+        <div class="card-title" style="margin-bottom:0;"><i class="fa-solid fa-calendar-days"></i> <span id="calendar-month-label">This month</span></div>
+        <div class="range-toggle" id="calendar-month-nav">
+          <button id="calendar-prev-month" aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+          <button id="calendar-today-btn">Today</button>
+          <button id="calendar-next-month" aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div class="month-cal-weekdays">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="month-cal-grid" id="month-cal-grid"></div>
+      <div class="heatmap-legend">
+        Less
+        <div class="heatmap-cell" data-level="0"></div>
+        <div class="heatmap-cell" data-level="1"></div>
+        <div class="heatmap-cell" data-level="2"></div>
+        <div class="heatmap-cell" data-level="3"></div>
+        <div class="heatmap-cell" data-level="4"></div>
+        More
+      </div>
+    </div>
   </main>
 </div>
 <script src="js/config.js"></script>

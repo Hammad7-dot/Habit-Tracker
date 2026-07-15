@@ -655,6 +655,73 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
 .heatmap-legend .heatmap-cell { cursor: default; }
 
 /* ==========================================================================
+   Month calendar (dashboard)
+   ========================================================================== */
+
+.month-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.month-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.month-cal-cell {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm, 6px);
+  background: var(--surface-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  position: relative;
+  cursor: pointer;
+}
+
+.month-cal-cell.empty { background: transparent; cursor: default; }
+
+.month-cal-cell[data-level="1"] { background: #4a2a12; color: var(--text); }
+.month-cal-cell[data-level="2"] { background: #8a4213; color: var(--text); }
+.month-cal-cell[data-level="3"] { background: #d1651a; color: var(--text); }
+.month-cal-cell[data-level="4"] { background: var(--ember-hot); color: #1a1a1a; font-weight: 600; }
+
+.month-cal-cell.today {
+  outline: 2px solid var(--violet);
+  outline-offset: -2px;
+  font-weight: 700;
+}
+
+.month-cal-cell:not(.empty):hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  z-index: 20;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .month-cal-cell { font-size: 0.68rem; }
+}
+
+
+/* ==========================================================================
    Achievements
    ========================================================================== */
 
@@ -812,3 +879,5 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   .stat-card .stat-value { font-size: 1.5rem; }
   .habits-grid { grid-template-columns: 1fr; }
 }
+
+
