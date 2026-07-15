@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env files
+.env
+backend/.env
+
+# Local SQLite db
+backend/*.db
+backend/habit_tracker.db
+
+# Uploaded static files
+backend/static/*
+!backend/static/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Vercel
+.vercel
