@@ -177,11 +177,11 @@ function renderShell(activePage, user) {
     <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
     <div class="mobile-topbar">
       <button class="btn btn-icon btn-ghost" id="mobile-menu-btn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-      <div class="brand"><i class="fa-solid fa-bolt"></i> Habit Tracker</div>
+      <a href="dashboard.html" class="brand"><i class="fa-solid fa-bolt"></i> Habit Tracker</a>
       <div style="width:2.25rem"></div>
     </div>
     <aside class="sidebar" id="app-sidebar">
-      <div class="brand"><i class="fa-solid fa-bolt"></i> Habit Tracker</div>
+      <a href="dashboard.html" class="brand"><i class="fa-solid fa-bolt"></i> Habit Tracker</a>
       <nav>${navHtml}</nav>
       <div class="sidebar-footer">
         <div class="sidebar-user">
