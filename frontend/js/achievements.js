@@ -59,7 +59,7 @@
 
     grid.innerHTML = sorted.map((a) => `
       <div class="achievement-card ${a.unlocked ? "unlocked" : ""}">
-        <div class="achievement-icon"><i class="fa-solid ${a.icon}"></i></div>
+        <div class="achievement-icon"><i class="fa-solid ${a.unlocked ? "fa-trophy" : "fa-lock"}"></i></div>
         <div class="achievement-body">
           <div class="name">${escapeHtml(a.name)}</div>
           <div class="desc">${escapeHtml(a.description)}</div>
