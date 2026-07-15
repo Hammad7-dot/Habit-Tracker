@@ -1,4 +1,4 @@
-# Habit Tracker — Phase 5 (Deployment)
+# Habit Tracker 
 A production-ready full-stack habit tracker. **Phase 5** takes Phase 4's
 finished app to production: Alembic migrations replace ad-hoc table
 creation, the backend deploys to Render on managed PostgreSQL, and the
