@@ -1,8 +1,4 @@
-
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, Boolean, Time
-
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text
-
 from sqlalchemy import Enum as SAEnum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
@@ -38,10 +34,8 @@ class Habit(Base):
     color = Column(String(20), default=DEFAULT_COLOR)  # hex color, from curated picker
     icon = Column(String(50), default=DEFAULT_ICON)  # Font Awesome icon class, from curated picker
 
-
     reminder_enabled = Column(Boolean, default=False, nullable=False)
     reminder_time = Column(Time, nullable=True)  # local time-of-day the reminder should fire
-
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
