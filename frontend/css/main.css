@@ -286,6 +286,12 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   z-index: 40;
 }
 
+.sidebar .brand,
+.mobile-topbar .brand {
+  color: inherit;
+  text-decoration: none;
+}
+
 .sidebar .brand {
   display: flex;
   align-items: center;
