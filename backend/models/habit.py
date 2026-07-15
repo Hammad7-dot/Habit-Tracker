@@ -16,7 +16,17 @@ class Habit(Base):
     title = Column(String(100), nullable=False)
     description = Column(Text, nullable=True)
     category = Column(
-        SAEnum(HabitCategory, name="habit_category", native_enum=False, length=20),
+        SAEnum(
+            HabitCategory,
+            name="habit_category",
+            native_enum=False,
+            length=20,
+            # Without this, SQLAlchemy stores the enum MEMBER NAME
+            # (e.g. "PRODUCTIVITY") instead of its value (e.g. "Productivity").
+            # The DB's ck_habits_category check constraint (and the rest of
+            # the app) expects the Title Case value, so this is required.
+            values_callable=lambda enum_cls: [member.value for member in enum_cls],
+        ),
         default=DEFAULT_CATEGORY,
         nullable=False,
     )
