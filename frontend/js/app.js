@@ -216,9 +216,8 @@ async function initAppPage(activePage) {
   const user = await requireAuth();
   if (!user) return null;
   renderShell(activePage, user);
-
   if (typeof startReminders === "function") startReminders();
-
+  if (typeof startReminders === "function") startReminders();
   return user;
 }
 
@@ -263,4 +262,9 @@ function setFormError(el, message) {
     el.textContent = "";
     el.classList.remove("visible");
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> a40ae04d4f523b4a46181d9b92b8d3c054fe48bc
