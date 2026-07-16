@@ -216,9 +216,8 @@ async function initAppPage(activePage) {
   const user = await requireAuth();
   if (!user) return null;
   renderShell(activePage, user);
-
   if (typeof startReminders === "function") startReminders();
-
+  if (typeof startReminders === "function") startReminders();
   return user;
 }
 
@@ -265,4 +264,3 @@ function setFormError(el, message) {
   }
 }
 
-if (typeof startReminders === "function") startReminders();
