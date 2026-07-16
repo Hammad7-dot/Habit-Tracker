@@ -216,6 +216,13 @@ async function initAppPage(activePage) {
   const user = await requireAuth();
   if (!user) return null;
   renderShell(activePage, user);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  if (typeof startReminders === "function") startReminders();
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
   return user;
 }
 

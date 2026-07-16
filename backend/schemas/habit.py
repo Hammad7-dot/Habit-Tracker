@@ -1,5 +1,13 @@
 from pydantic import BaseModel, Field, ConfigDict, field_validator
+<<<<<<< HEAD
 from datetime import datetime, date
+=======
+
+from datetime import datetime, date, time
+
+from datetime import datetime, date
+
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
 from typing import Optional
 
 from constants import HabitCategory, ALLOWED_ICONS, ALLOWED_COLORS, DEFAULT_COLOR, DEFAULT_ICON
@@ -29,6 +37,13 @@ class HabitCreate(BaseModel):
     color: str = DEFAULT_COLOR
     icon: str = DEFAULT_ICON
 
+<<<<<<< HEAD
+=======
+    reminder_enabled: bool = False
+    reminder_time: Optional[time] = None
+
+
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
     @field_validator("icon")
     @classmethod
     def icon_must_be_supported(cls, v: str) -> str:
@@ -48,6 +63,13 @@ class HabitUpdate(BaseModel):
     color: Optional[str] = None
     icon: Optional[str] = None
 
+<<<<<<< HEAD
+=======
+    reminder_enabled: Optional[bool] = None
+    reminder_time: Optional[time] = None
+
+
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
     @field_validator("icon")
     @classmethod
     def icon_must_be_supported(cls, v: Optional[str]) -> Optional[str]:
@@ -70,6 +92,13 @@ class HabitOut(BaseModel):
     goal: int
     color: str
     icon: str
+<<<<<<< HEAD
+=======
+
+    reminder_enabled: bool = False
+    reminder_time: Optional[time] = None
+
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
     created_at: datetime
 
 
