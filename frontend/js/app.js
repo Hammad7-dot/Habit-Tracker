@@ -263,11 +263,4 @@ function setFormError(el, message) {
     el.textContent = "";
     el.classList.remove("visible");
   }
-
 }
-
-
-
-
-
-

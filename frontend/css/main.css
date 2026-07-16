@@ -868,12 +868,14 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
 }
 
 @media (max-width: 760px) {
+  .app-shell { flex-direction: column; }
   .sidebar { position: fixed; left: 0; top: 0; transform: translateX(-100%); transition: transform 0.2s ease; box-shadow: var(--shadow-soft); }
   .sidebar.open { transform: translateX(0); }
   .mobile-topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 
     height: calc(var(--header-h) + env(safe-area-inset-top, 0px));
     padding: env(safe-area-inset-top, 0px) 1rem 0;
@@ -886,7 +888,7 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   }
   .mobile-topbar .brand { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-weight: 700; }
   .mobile-topbar .brand i { background: var(--gradient-ember); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .main { padding: 1.25rem 1rem 3rem; }
+  .main { padding: 1.25rem 1rem 3rem; width: 100%; }
   .stat-grid { grid-template-columns: 1fr 1fr; }
   .page-header h1 { font-size: 1.35rem; }
   .sidebar-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 39; display: none; }
