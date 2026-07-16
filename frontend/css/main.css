@@ -979,5 +979,6 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
 @media (max-width: 480px) {
   .stat-card { padding: 1rem 1.1rem; }
   .stat-card .stat-value { font-size: 1.5rem; }
-  .habits-grid { grid-template-columns: 1fr; }
-}
+  .habits-grid { grid-template-columns: 1fr; 
+  }
+}    
