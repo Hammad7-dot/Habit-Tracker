@@ -42,7 +42,12 @@ function alreadyFiredToday(habitId) {
 function showReminderNotification(habit) {
   const title = "Habit reminder";
   const body = `Time for: ${habit.title}`;
-  if ("serviceWorker" in navigator && navigator.serviceWorker.controller) {
+  if ("serviceWorker" in navigator) {
+    // Don't gate on navigator.serviceWorker.controller — it's still null on the
+    // very first session before the SW has taken control of the page, even
+    // though the registration itself is ready. Waiting on `.ready` covers both
+    // cases and avoids falling back to the plain Notification() constructor,
+    // which throws unconditionally on mobile Chrome.
     navigator.serviceWorker.ready.then((reg) => {
       reg.showNotification(title, {
         body,
