@@ -161,11 +161,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
 .field-error { font-size: 0.78rem; color: var(--danger); min-height: 1em; }
 
 
-input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], textarea, select {
-
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="time"], textarea, select {
-
-input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], textarea, select {
 
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -878,14 +874,8 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
     align-items: center;
     justify-content: space-between;
 
-    height: var(--header-h);
-    padding: 0 1rem;
-
     height: calc(var(--header-h) + env(safe-area-inset-top, 0px));
     padding: env(safe-area-inset-top, 0px) 1rem 0;
-
-    height: var(--header-h);
-    padding: 0 1rem;
 
     border-bottom: 1px solid var(--border);
     background: var(--bg-elevated);
@@ -979,6 +969,5 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
 @media (max-width: 480px) {
   .stat-card { padding: 1rem 1.1rem; }
   .stat-card .stat-value { font-size: 1.5rem; }
-  .habits-grid { grid-template-columns: 1fr; 
-  }
-}    
+  .habits-grid { grid-template-columns: 1fr; }
+}
