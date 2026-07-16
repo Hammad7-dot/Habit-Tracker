@@ -59,6 +59,7 @@ body {
   font-family: var(--font-body);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a { color: inherit; }
@@ -501,8 +502,8 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
 }
 
 .habit-info { flex: 1; min-width: 0; }
-.habit-info .title { font-weight: 600; font-size: 0.94rem; }
-.habit-info .meta { font-size: 0.78rem; color: var(--text-faint); display: flex; gap: 0.6rem; align-items: center; margin-top: 0.15rem; }
+.habit-info .title { font-weight: 600; font-size: 0.94rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.habit-info .meta { font-size: 0.78rem; color: var(--text-faint); display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; align-items: center; margin-top: 0.15rem; }
 
 .empty-state {
   text-align: center;
@@ -890,6 +891,8 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   .page-header h1 { font-size: 1.35rem; }
   .sidebar-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 39; display: none; }
   .sidebar-backdrop.open { display: block; }
+  #mobile-menu-btn { width: 2.75rem; height: 2.75rem; }
+  .habit-check { width: 2.5rem; height: 2.5rem; }
 }
 
 .reminder-toggle-row {
@@ -970,4 +973,5 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   .stat-card { padding: 1rem 1.1rem; }
   .stat-card .stat-value { font-size: 1.5rem; }
   .habits-grid { grid-template-columns: 1fr; }
+  .toast-stack { left: 1rem; right: 1rem; max-width: none; }
 }
