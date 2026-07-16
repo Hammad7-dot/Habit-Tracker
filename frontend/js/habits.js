@@ -109,13 +109,9 @@
         ${h.description ? `<div class="desc">${escapeHtml(h.description)}</div>` : ""}
         <div class="habit-card-stats">
           <div><strong>${h.goal}</strong>&nbsp;/ day goal</div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
           ${h.reminder_enabled && h.reminder_time ? `<div class="reminder-pill"><i class="fa-solid fa-bell"></i> ${formatReminderTime(h.reminder_time)}</div>` : ""}
-=======
->>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
->>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
+
         </div>
         <div class="habit-card-actions">
           <button class="btn btn-secondary btn-sm edit-btn" style="flex:1;"><i class="fa-solid fa-pen"></i> Edit</button>
