@@ -124,7 +124,12 @@ function showReminderPermissionBanner() {
   });
 }
 
+let remindersStarted = false;
+
 function startReminders() {
+  if (remindersStarted) return;
+  remindersStarted = true;
+
   if (!("Notification" in window)) return;
   registerServiceWorker();
   showReminderPermissionBanner();

@@ -264,5 +264,3 @@ function setFormError(el, message) {
     el.classList.remove("visible");
   }
 }
-
-if (typeof startReminders === "function") startReminders();
