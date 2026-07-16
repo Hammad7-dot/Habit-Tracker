@@ -35,11 +35,7 @@ class Habit(Base):
     icon = Column(String(50), default=DEFAULT_ICON)  # Font Awesome icon class, from curated picker
 
     reminder_enabled = Column(Boolean, default=False, nullable=False)
-<<<<<<< HEAD
     reminder_time = Column(Time, nullable=True)  # local time of day for the reminder, if enabled
-=======
-    reminder_time = Column(Time, nullable=True)  # local time-of-day the reminder should fire
->>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
