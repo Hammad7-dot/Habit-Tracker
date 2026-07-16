@@ -160,15 +160,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
 .field-hint { font-size: 0.75rem; color: var(--text-faint); }
 .field-error { font-size: 0.78rem; color: var(--danger); min-height: 1em; }
 
-<<<<<<< HEAD
+
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], textarea, select {
-=======
-<<<<<<< HEAD
+
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="time"], textarea, select {
-=======
+
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], textarea, select {
->>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
->>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
+
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   color: var(--text);
@@ -178,9 +176,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   font-size: 0.95rem;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
   width: 100%;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
   color-scheme: dark;
 }
 
@@ -191,9 +187,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   input[type="date"], input[type="time"], textarea, select {
     font-size: 16px;
   }
-=======
->>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
->>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
+
 }
 
 input:focus, textarea:focus, select:focus {
@@ -883,18 +877,16 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
     display: flex;
     align-items: center;
     justify-content: space-between;
-<<<<<<< HEAD
+
     height: var(--header-h);
     padding: 0 1rem;
-=======
-<<<<<<< HEAD
+
     height: calc(var(--header-h) + env(safe-area-inset-top, 0px));
     padding: env(safe-area-inset-top, 0px) 1rem 0;
-=======
+
     height: var(--header-h);
     padding: 0 1rem;
->>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
->>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
+
     border-bottom: 1px solid var(--border);
     background: var(--bg-elevated);
     position: sticky;
@@ -909,13 +901,6 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   .sidebar-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 39; display: none; }
   .sidebar-backdrop.open { display: block; }
 }
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-/* ==========================================================================
-   Reminders
-   ========================================================================== */
 
 .reminder-toggle-row {
   display: flex;
@@ -991,9 +976,6 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   to { transform: translateY(0); opacity: 1; }
 }
 
-=======
->>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
->>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
 @media (max-width: 480px) {
   .stat-card { padding: 1rem 1.1rem; }
   .stat-card .stat-value { font-size: 1.5rem; }
