@@ -160,7 +160,15 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
 .field-hint { font-size: 0.75rem; color: var(--text-faint); }
 .field-error { font-size: 0.78rem; color: var(--danger); min-height: 1em; }
 
+<<<<<<< HEAD
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], textarea, select {
+=======
+<<<<<<< HEAD
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="time"], textarea, select {
+=======
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], textarea, select {
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   color: var(--text);
@@ -170,6 +178,22 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
   font-size: 0.95rem;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
   width: 100%;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  color-scheme: dark;
+}
+
+/* iOS Safari zooms the page on focus if an input's font-size is under 16px —
+   bump it back down visually with a scale-neutral min size on touch widths. */
+@media (max-width: 760px) {
+  input[type="text"], input[type="email"], input[type="password"], input[type="number"],
+  input[type="date"], input[type="time"], textarea, select {
+    font-size: 16px;
+  }
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
 }
 
 input:focus, textarea:focus, select:focus {
@@ -859,8 +883,18 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
     display: flex;
     align-items: center;
     justify-content: space-between;
+<<<<<<< HEAD
     height: var(--header-h);
     padding: 0 1rem;
+=======
+<<<<<<< HEAD
+    height: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) 1rem 0;
+=======
+    height: var(--header-h);
+    padding: 0 1rem;
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
     border-bottom: 1px solid var(--border);
     background: var(--bg-elevated);
     position: sticky;
@@ -876,6 +910,90 @@ input::placeholder, textarea::placeholder { color: var(--text-faint); }
   .sidebar-backdrop.open { display: block; }
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+/* ==========================================================================
+   Reminders
+   ========================================================================== */
+
+.reminder-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.switch { position: relative; display: inline-block; width: 2.6rem; height: 1.5rem; flex-shrink: 0; }
+.switch input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; z-index: 1; }
+.switch-track {
+  position: absolute; inset: 0;
+  background: var(--surface-strong);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  transition: background 0.15s ease;
+}
+.switch-track::before {
+  content: "";
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 1.1rem; height: 1.1rem;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.switch input:checked + .switch-track { background: rgba(139, 92, 246, 0.35); border-color: var(--violet); }
+.switch input:checked + .switch-track::before { transform: translateX(1.1rem); background: var(--violet-light); }
+
+.reminder-pill {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; color: var(--text-dim);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
+.reminder-pill i { color: var(--warning); font-size: 0.7rem; }
+
+.reminder-banner {
+  position: fixed;
+  left: 1rem; right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 150;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.85rem;
+  animation: toast-in 0.25s ease;
+}
+.reminder-banner i.fa-bell { color: var(--warning); }
+.reminder-banner span { flex: 1; }
+
+@media (max-width: 600px) {
+  .modal-overlay { align-items: flex-end; padding: 0; }
+  .modal {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 1.5rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    animation: sheet-up 0.2s ease;
+  }
+}
+
+@keyframes sheet-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+=======
+>>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
+>>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
 @media (max-width: 480px) {
   .stat-card { padding: 1rem 1.1rem; }
   .stat-card .stat-value { font-size: 1.5rem; }
