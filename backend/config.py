@@ -34,6 +34,12 @@ class Settings(BaseSettings):
     # CORS_ORIGINS=https://your-app.vercel.app
     CORS_ORIGINS: str = "http://localhost:3000,http://127.0.0.1:5500,http://localhost:5500"
 
+    # Optional regex to also allow-list an origin pattern (e.g. every Vercel
+    # preview deployment for this project) without editing CORS_ORIGINS per
+    # deployment. Example:
+    # CORS_ORIGIN_REGEX=https://habit-tracker-.*\.vercel\.app
+    CORS_ORIGIN_REGEX: str | None = None
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     @field_validator("DATABASE_URL")

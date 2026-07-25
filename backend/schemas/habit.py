@@ -1,7 +1,5 @@
 from pydantic import BaseModel, Field, ConfigDict, field_validator
-from datetime import datetime, date
 from datetime import datetime, date, time
-from datetime import datetime, date
 from typing import Optional
 
 from constants import HabitCategory, ALLOWED_ICONS, ALLOWED_COLORS, DEFAULT_COLOR, DEFAULT_ICON
