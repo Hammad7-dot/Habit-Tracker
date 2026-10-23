@@ -151,12 +151,6 @@ change takes effect.
 | POST | /profile/change-password | Change password |
 | GET | /profile/stats | Total habits/completions |
 | GET | /achievements | Full catalog + this user's progress/unlock status |
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> cc30b236afbf34ce26a54add4ee6a06deec9f873
->>>>>>> 67dc7449e9306e1041dd90249aae478f9d1548fc
 | POST | /achievements/evaluate | Re-check and unlock any newly-earned achievements |
 
 ## Possible next steps
