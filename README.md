@@ -1,5 +1,5 @@
 # Habit Tracker: 
-A production-ready full-stack habit tracker. Live demo: https://habit-tracker-blue-one.vercel.app/
+A production-ready full-stack habit tracker. 
 <img width="720" height="405" alt="Habit Tracker demo" src="https://github.com/user-attachments/assets/6978f734-8a9c-47be-b040-22f300f48a78" />
 
 - **Alembic** (`backend/alembic/`): a real migration history instead of
