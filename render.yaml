@@ -18,7 +18,6 @@ services:
     dockerContext: ./backend
     plan: free
     healthCheckPath: /
-    preDeployCommand: cd backend && alembic upgrade head
     envVars:
       - key: ENV
         value: production
@@ -37,6 +36,7 @@ services:
       - key: REFRESH_TOKEN_EXPIRE_DAYS
         value: "30"
       - key: CORS_ORIGINS
+        sync: false
         # Replace with your deployed Vercel domain(s) after the frontend is
         # live — comma-separated for multiple (e.g. preview + prod).
         value: https://your-app.vercel.app
